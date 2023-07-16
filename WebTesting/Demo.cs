@@ -20,7 +20,6 @@ namespace Demo
                 Headless = true
             });
             page = await browser.NewPageAsync();
-
         }
         [Test]
         public async Task GoToPageDocsPlaywright()
@@ -54,6 +53,19 @@ namespace Demo
             Assert.IsTrue(titleVisible);
             Console.WriteLine($"Titulo visivel:{titleVisible}");
             Console.WriteLine($"Employee Details visivel:{employeeVisible}");
+        }
+        [Test]
+        public async Task GoToRegisterEaaP()
+        {
+            //Arrange
+            await page.GotoAsync("http://eaapp.somee.com");
+            await page.ClickAsync("text=Register");
+            var titleVisible = await page.Locator("h2").IsVisibleAsync();
+            //Action
+           
+            //Assert
+            Assert.IsTrue(titleVisible);
+            Console.WriteLine($"Titulo visivel:{titleVisible}");
         }
     }
 }
