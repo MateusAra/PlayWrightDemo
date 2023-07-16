@@ -17,7 +17,7 @@ namespace Demo
             playwright = await Playwright.CreateAsync();
             browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
             {
-                Headless = false
+                Headless = true
             });
             page = await browser.NewPageAsync();
 
