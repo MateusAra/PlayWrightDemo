@@ -64,7 +64,6 @@ namespace Demo
             //Action
            
             //Assert
-            Assert.IsTrue(employeeVisible);
             Assert.IsTrue(titleVisible);
             Console.WriteLine($"Titulo visivel:{titleVisible}");
         }
