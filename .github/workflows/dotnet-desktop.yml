@@ -24,5 +24,17 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release
 
+  run-nunit-tests:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'  # Certifique-se de utilizar a versão correta do .NET
+
     - name: Run NUnit Tests
       run: dotnet test --no-restore --verbosity normal --configuration Release --filter FullyQualifiedName~PlayWrightDemo.WebTesting.Demo
