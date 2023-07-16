@@ -1,0 +1,5 @@
+{
+  "PageElements": {
+    "button": "#docusaurus_skipToContent_fallback > header > div > div > a"
+  }
+}
