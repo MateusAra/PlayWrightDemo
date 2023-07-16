@@ -20,7 +20,6 @@ namespace Demo
                 Headless = true
             });
             page = await browser.NewPageAsync();
-
         }
         [Test]
         public async Task GoToPageDocsPlaywright()
