@@ -25,4 +25,4 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Run NUnit Tests
-      run: dotnet test --no-restore --verbosity normal --configuration Release --filter FullyQualifiedName~PlayWrightDemo.WebTesting.Demo
+      run: dotnet test --no-restore --verbosity normal --configuration Release --filter FullyQualifiedName~PlayWrightDemo.WebTesting.Demo.Demo
