@@ -54,5 +54,19 @@ namespace Demo
             Console.WriteLine($"Titulo visivel:{titleVisible}");
             Console.WriteLine($"Employee Details visivel:{employeeVisible}");
         }
+        [Test]
+        public async Task GoToRegisterEaaP()
+        {
+            //Arrange
+            await page.GotoAsync("http://eaapp.somee.com");
+            await page.ClickAsync("text=Register");
+            var titleVisible = await page.Locator("h2").IsVisibleAsync();
+            //Action
+           
+            //Assert
+            Assert.IsTrue(employeeVisible);
+            Assert.IsTrue(titleVisible);
+            Console.WriteLine($"Titulo visivel:{titleVisible}");
+        }
     }
 }
