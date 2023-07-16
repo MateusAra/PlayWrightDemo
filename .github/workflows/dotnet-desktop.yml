@@ -1,0 +1,28 @@
+name: .NET 6.0 Tests
+
+on:
+  push:
+    branches:
+      - TestesCi 
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'  # Certifique-se de utilizar a versão correta do .NET
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release
+
+    - name: Run NUnit Tests
+      run: dotnet test --no-restore --verbosity normal --configuration Release --filter FullyQualifiedName~PlayWrightDemo.WebTesting.Demo
