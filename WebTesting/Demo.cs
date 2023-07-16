@@ -5,7 +5,7 @@ using Microsoft.Playwright;
 namespace Demo
 {
     [TestFixture]
-    public class Tests
+    public class Demo
     {
         private IPlaywright playwright;
         private IBrowser browser;
